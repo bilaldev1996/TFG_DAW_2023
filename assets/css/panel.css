@@ -1,0 +1,241 @@
+/* contenedorCiclos */
+.contenedorCiclos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 2rem 0;
+    gap: 3rem;
+}
+
+.contenedorCiclo select {
+    padding: .5rem;
+}
+
+/* input buscador */
+.search-container {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 10rem;
+    top: -1rem;
+}
+
+.search-container input {
+    padding: 10px;
+    border: 2px solid var(--color-primario);
+    font-size: 16px;
+}
+
+.search-container input:focus {
+    outline: none;
+}
+
+.search-container button {
+    background-color: var(--color-primario);
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    height: 48px;
+}
+
+.tarjeta {
+    position: relative;
+    transition: all .5s linear;
+}
+
+/* parte frontal */
+.front {
+    transform: rotateY(0deg);
+    backface-visibility: hidden;
+    position: absolute;
+    transition: transform 1s;
+    transform: rotateY(0deg);
+}
+
+
+/* parte trasera */
+.back {
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    transition: transform 1s;
+    overflow: hidden;
+}
+
+
+/* clase para que gire la tarjeta */
+.girada .front {
+    transform: rotateY(180deg);
+}
+
+.girada .back {
+    transform: rotateY(0deg);
+}
+
+#botonCurso {
+    position: absolute;
+    right: 0;
+    top: -3rem;
+}
+
+.misTitulaciones {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding: 1rem;
+}
+
+
+#form-container {
+    position: absolute;
+    right: 10%;
+    transition: all 0.5s;
+    opacity: 0;
+    top: 0%;
+    z-index: -1;
+}
+
+#form-container.active {
+    position: absolute;
+    right: 13%;
+    opacity: 1;
+    z-index: 1;
+}
+
+.mover-izquierda {
+    margin-left: 0 !important;
+    transition: all .5s !important;
+}
+
+.gridEstudiantes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.ofertas {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+@media screen and (max-width: 992px) {
+
+
+    #form-container {
+        position: relative;
+        right: 0%;
+        width: 100% !important;
+    }
+
+    #form-container.active {
+        position: relative;
+        right: 0%;
+    }
+
+    .switchVerificacion {
+        margin-top: 4rem;
+        position: absolute;
+    }
+
+    .gridEstudiantes {
+        grid-template-columns: 1fr;
+    }
+
+    .ofertas {
+        grid-template-columns: 1fr;
+    }
+
+    .miOferta {
+        width: 100% !important;
+    }
+
+    .titulaciones {
+        position: relative !important;
+        width: 100% !important;
+        margin-top: 1.5rem !important;
+    }
+
+    .ciclos {
+        width: 100% !important;
+    }
+
+    .search-container {
+        right: 0;
+        top: 0;
+        width: 100%;
+        position: relative;
+    }
+
+    .search-container input {
+        padding: 10px;
+        width: 100%;
+    }
+
+
+    .contenedorCiclos {
+        grid-template-columns: 1fr;
+    }
+
+    /* contenedor panel estudiante */
+    .mainPanelMovil {
+        padding: 2rem 1rem !important;
+    }
+
+    /* boton darse de baja */
+    #botonBaja {
+        position: relative !important;
+    }
+
+
+
+    /* contenedores */
+    .ofertas,
+    .misOfertas,
+    .contenedorOfertas {
+        padding: 2rem 1rem !important;
+        margin-top: 1rem !important;
+        gap: 3rem !important;
+        padding-top: 1rem !important;
+    }
+
+    .ofertas {
+        padding: 2rem 0rem !important;
+    }
+
+    /* boton verOferta */
+    .verOferta {
+        display: block !important;
+    }
+
+    .oferta:hover {
+        background-color: white !important;
+    }
+
+    .oferta-container {
+        padding: 1rem !important;
+    }
+
+    /* .oferta-container a,
+    .oferta-container .inscrito {
+        width: 100% !important;
+        position: relative !important;
+        margin-top: 2rem !important;
+        right: 0 !important;
+        text-align: center !important;
+    } */
+
+    .oferta-container .inscrito {
+        width: 100% !important;
+        position: relative !important;
+        margin-top: 2rem !important;
+        right: 0 !important;
+        text-align: center !important;
+    }
+
+
+}
+
+@media screen and (max-width: 400px) {
+    .mainPanelMovil {
+        padding: 0 0 !important;
+    }
+}

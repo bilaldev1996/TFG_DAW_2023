@@ -1,0 +1,107 @@
+/* Página login estudiante */
+
+
+
+h2 {
+    color: #666666;
+    margin-bottom: 2rem !important;
+    text-align: center;
+    font-size: 2rem !important;
+}
+
+.login-container {
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    margin: 6rem auto;
+    padding: 20px;
+    width: 40%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.login-container form,
+.login-container img {
+    width: 100%;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.login-container input[type="email"],
+.login-container input[type="password"] {
+    border: 1px solid #CCCCCC;
+    border-radius: 3px;
+    display: block;
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 100%;
+}
+
+button[type="submit"]:hover {
+    background-color: var(--color-secundario) !important;
+    color: white !important;
+}
+
+
+.group-button {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    gap: 2rem;
+}
+
+.not-account {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.not-account a {
+    margin-left: .5rem;
+}
+
+/* Página registro estudiante */
+
+.form-container {
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    margin: 7rem auto;
+    padding: 20px;
+    width: 60%;
+}
+
+/* Página ofertas */
+
+
+@media screen and (max-width:992px) {
+
+    .form-container {
+        margin: 4rem auto;
+        width: 100%;
+        padding: 0;
+    }
+
+    .form-container h2 {
+        margin-top: 5rem;
+        font-size: 1.6rem !important;
+    }
+
+
+    .login-container {
+        width: 100%;
+        margin: 9rem auto;
+    }
+
+    .login-container img {
+        display: none;
+    }
+
+    .olvido {
+        margin: 0 auto !important;
+        display: inline !important;
+        text-align: center;
+        margin-top: 1rem !important;
+    }
+
+}

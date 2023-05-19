@@ -1,0 +1,133 @@
+/* Estilos para la sección hero */
+
+.container-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 4rem;
+}
+
+.container-section h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-terciario);
+    margin-bottom: 2rem;
+}
+
+.container-section p {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #6c757d;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+}
+
+.container-section .btn {
+    font-size: 16px;
+    font-weight: 500;
+    padding: 14px 40px;
+    background-color: var(--color-primario);
+    border: none;
+    transition: all 0.5s ease;
+}
+
+.container-section .btn:hover {
+    background-color: var(--color-secundario);
+    color: white !important;
+}
+
+
+.section-info {
+    padding: 4rem 2rem;
+}
+
+/* Estilos para la sección de características */
+.features-section {
+    padding: 3rem 0;
+}
+
+.features-section article {
+    background-color: white;
+}
+
+.feature {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.feature .icon {
+    font-size: 48px;
+    color: var(--color-secundario);
+    margin-bottom: 30px;
+}
+
+.feature h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--color-terciario);
+    margin-bottom: 20px;
+}
+
+.feature p {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #6c757d;
+    line-height: 1.5;
+}
+
+.section-info p span {
+    font-size: 2rem;
+    color: var(--color-secundario);
+    font-weight: bold;
+}
+
+/* Estilos para la sección de llamado a la acción */
+.call-to-action-section {
+    background-color: var(--color-secundario);
+    padding: 100px 0;
+}
+
+.call-to-action-section h2 {
+    font-size: 48px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 40px;
+}
+
+.call-to-action-section .btn {
+    font-size: 16px;
+    font-weight: 500;
+    padding: 14px 40px;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 50px;
+    color: var(--color-terciario);
+}
+
+.call-to-action-section .btn:hover {
+    background-color: #ffffff;
+    color: var(--color-terciario);
+}
+
+
+@media screen and (max-width: 768px) {
+
+
+    .container-section {
+        grid-template-columns: 1fr;
+    }
+
+    .section-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .home {
+        padding: 0 !important;
+    }
+
+    .home h1 {
+        font-size: 2.5rem !important;
+        text-align: center;
+    }
+}

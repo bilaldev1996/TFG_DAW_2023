@@ -1,0 +1,230 @@
+/* Barra navegación */
+.navbar {
+    background: var(--color-secundario);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all .5s ease;
+    z-index: 10;
+    color: white;
+    padding: 0 10rem;
+}
+
+.navbarCentro {
+    padding: 0;
+}
+
+/* logo empresa */
+.logo {
+    width: 120px;
+    height: 120px;
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: space-around;
+}
+
+nav ul li a {
+    display: block;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    padding: 0 10px;
+    line-height: 50px;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    color: var(--color-terciario);
+}
+
+
+.contenedor_barras {
+    position: absolute;
+    right: 2rem;
+    top: 2rem;
+    display: none;
+    cursor: pointer;
+}
+
+.boton-hamburguesa {
+    display: none;
+    cursor: pointer;
+}
+
+/*barras menú hamburguesa*/
+.contenedor_barras span,
+.boton-hamburguesa span {
+    display: block;
+    width: 40px;
+    height: 5px;
+    margin-bottom: 8px;
+    background: var(--color-terciario);
+    border-radius: 3px;
+    position: relative;
+    transition: all .3s linear;
+}
+
+/* transiciones y transformaciones barras */
+.icono_cruz span:nth-child(1) {
+    transform: rotate(45deg);
+    transform-origin: left;
+    top: -2px;
+    background-color: white;
+}
+
+.icono_cruz span:nth-child(2) {
+    background-color: white;
+    opacity: 0;
+}
+
+.icono_cruz span:nth-child(3) {
+    background-color: white;
+    transform: rotate(-45deg);
+    transform-origin: left;
+}
+
+/* navbar movil */
+.navbarMovil {
+    display: none;
+}
+
+.header-movil span {
+    color: white !important;
+}
+
+
+@media screen and (max-width: 992px) {
+
+    .header-movil span {
+        color: var(--color-secundario) !important;
+    }
+
+    .navbar {
+        display: flex;
+        height: 50%;
+        flex-direction: column;
+        justify-content: space-evenly;
+        position: absolute;
+        width: 100%;
+        z-index: 1;
+        top: -100%;
+        padding: 0;
+    }
+
+
+    .contenedor_barras,
+    .boton-hamburguesa {
+        display: block;
+        z-index: 5;
+    }
+
+    .enlacesNavegacion {
+        display: none !important;
+    }
+
+    .navbarContainer {
+        padding: 2rem 2rem !important;
+        ;
+        background-color: inherit !important;
+        flex-direction: column-reverse;
+    }
+
+    .navbarContainer>a {
+        display: none !important;
+    }
+
+    .overflow {
+        overflow: hidden;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        font-size: 1.7rem;
+        width: 100%;
+        margin: 0;
+    }
+
+
+    .logo {
+        width: 150px;
+        height: 150px;
+    }
+
+    /* imagen perfil */
+    .img-perfil {
+        width: 150px !important;
+        height: 150px !important;
+    }
+
+    .menu_visible {
+        top: -5%;
+    }
+
+    .menu_oculto {
+        top: -100%;
+    }
+
+    .opacidad {
+        opacity: .7;
+    }
+
+
+    /* Navbar movil */
+    .navbarMovil {
+        display: block !important;
+        background-color: var(--color-secundario);
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        z-index: 5;
+    }
+
+    .navbarMovil ul {
+        display: flex;
+        justify-content: space-between;
+        gap: 3rem;
+    }
+
+
+    .navbarMovil ul li a:hover {
+        background-color: var(--color-secundario);
+        color: white;
+    }
+
+    .navEmpresa ul li a {
+        padding: 0 8px;
+    }
+
+    .navbarCentro ul {
+        padding: 0 !important;
+    }
+
+    .header-movil {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    .navEmpresa ul li a {
+        font-size: 0.8rem !important;
+        gap: 0rem !important;
+
+    }
+}
+
+@media screen and (max-width: 530px) {
+    .navEmpresa ul {
+        gap: 0rem !important;
+    }
+}
+
+@media screen and (max-width: 490px) {
+    .navbarMovil ul {
+        gap: 0rem;
+    }
+}
