@@ -2,7 +2,7 @@
     <?php include 'template/navbar.php' ?>
 
     <!-- Contenido -->
-    <section class="w-full md:w-4/5 px-0 lg:px-3 mt-1">
+    <section class="w-full  px-0 lg:px-3 mt-1">
 
         <div class="bg-white p-6 rounded-lg shadow">
             <div class="flex justify-between">

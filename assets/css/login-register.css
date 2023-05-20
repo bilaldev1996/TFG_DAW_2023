@@ -79,7 +79,6 @@ button[type="submit"]:hover {
     .form-container {
         margin: 4rem auto;
         width: 100%;
-        padding: 0;
     }
 
     .form-container h2 {

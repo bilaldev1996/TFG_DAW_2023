@@ -50,7 +50,7 @@
         </div>
 
         <div class="flex flex-wrap -mx-3 mb-2 mt-12">
-            <button type="submit" class="w-full px-4 py-2 bg-primario text-black font-semibold rounded  focus:outline-none focus:ring shadow-lg hover:shadow-none transition-all duration-300 m-2">
+            <button type="submit" class="w-full px-4 py-2 bg-primario text-gray-700 font-semibold rounded  focus:outline-none focus:ring shadow-lg hover:shadow-none transition-all duration-300 m-2">
                 Registrarse
             </button>
             <p class="w-full text-sm text-center text-gray-600 ml-">¿Ya tienes una cuenta? <a href="index.php?controller=CentroController&action=accesoCentro" class="text-secundario">Inicia Sesión</a></p>

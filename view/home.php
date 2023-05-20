@@ -9,7 +9,7 @@
         </div>
         <img src="assets/images/contratando.jpg" alt="Imagen de empleados trabajando" class="img-fluid rounded-md">
     </section>
-    <section class="features-section grid grid-cols-1 lg:grid-cols-3 gap-3">
+    <section class="features-section grid grid-cols-1  lg:grid-cols-3 gap-3">
         <article class="feature border rounded-md shadow-md p-4">
             <div class="icon">
                 <i class="fas fa-search"></i>
@@ -33,14 +33,14 @@
         </article>
     </section>
     <section class="container-section mt-0">
-        <img src="assets/images/talento.png" alt="Imagen de empresarios en una reunión" class="img-fluid rounded-md">
+        <img src="assets/images/talento.png" alt="Imagen skills" class="img-fluid rounded-md w-full">
         <div class="section-info">
             <h1>¿Buscas talento?</h1>
             <p><span>JobsNow</span> te permite publicar ofertas de trabajo y buscar talentos en diferentes áreas. Encuentra el candidato ideal para tu empresa.</p>
             <a href="index.php?controller=EmpresaController&action=accesoEmpresa" class="btn text-secundario font-bold rounded">Publica una oferta de trabajo</a>
         </div>
     </section>
-    <section class="features-section grid grid-cols-1 lg:grid-cols-3 gap-3">
+    <section class="features-section grid grid-cols-1  lg:grid-cols-3 gap-3">
         <article class="feature border rounded-md shadow-md p-4">
             <div class="icon">
                 <i class="fas fa-briefcase"></i>

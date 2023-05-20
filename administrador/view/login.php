@@ -31,14 +31,13 @@
                 <?php
                 }
                 ?>
-                <div class="flex items-center justify-between mt-3">
+                <div class="flex flex-wrap items-center justify-between mt-3">
                     <button class="bg-amber-200 hover:bg-amber-300 text-gray-700 font-semibold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit" name="iniciar">
                         Iniciar Sesión
                     </button>
                     <a href="#" class="olvido inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" id="olvido-contraseña" data-te-toggle="modal" data-te-target="#exampleModal" data-te-ripple-init data-te-ripple-color="light">
                         ¿Has olvidado la contraseña?
                     </a>
-
                 </div>
             </form>
         </div>

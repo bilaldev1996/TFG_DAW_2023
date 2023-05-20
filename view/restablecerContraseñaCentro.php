@@ -1,7 +1,7 @@
 <?php include('template/navbar.php'); ?>
 
 
-<main class="max-w-md  w-1/2 bg-white p-5 rounded-md shadow-sm border mx-auto my-16">
+<main class="max-w-md  w-1/2 bg-white p-5 rounded-md shadow-sm border mx-auto my-28">
     <h1 class="text-2xl font-semibold mb-5 text-center">Restablecer contraseña</h1>
     <form method="POST" action="index.php?controller=CentroController&action=cambiarContraseña" id="formRestablecer">
 

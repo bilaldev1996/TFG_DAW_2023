@@ -229,7 +229,7 @@ class gestion
 
         $this->gestionar->verificarEmpresa($idEmpresa, 1);
 
-        $cuerpo = 'Ya puedes iniciar sesión->  ' . '<a href="jobsnow.es/index.php?controller=EmpresaController&action=accesoEmpresa" class="text-blue-500" >InicarSesión</a>';
+        $cuerpo = 'Ya puedes iniciar sesión ' . '<a href="jobsnow.es/index.php?controller=EmpresaController&action=accesoEmpresa" class="text-blue-500" >InicarSesión</a>';
         $asunto = 'Cuenta Validada';
 
         // Headers del correo
