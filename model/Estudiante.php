@@ -197,6 +197,42 @@ class Estudiante
         }
     }
 
+    /* Inicio sesion estudiante */
+    public function login($password, $email)
+    {
+
+        $sql = "SELECT * FROM `estudiante` WHERE `email` = '$email'";
+        $result = $this->conection->query($sql);
+        if ($result->num_rows < 1) return false;
+        $row = $result->fetch_assoc();
+
+
+        if (password_verify($password, $row['password'])) {
+            $_SESSION['estudiante'] = $row['idEstudiante'];
+            return $row;
+        } else {
+            return false;
+        }
+    }
+
+    public function close()
+    {
+        $_SESSION['estudiante'] = NULL;
+        unset($_SESSION['estudiante']);
+    }
+
+    public function cambiarContraseña($nuevaContraseña)
+    {
+        $hashContraseña = password_hash($nuevaContraseña, PASSWORD_DEFAULT);
+        $sql = "UPDATE estudiante SET password = '$hashContraseña'";
+
+        if ($this->conection->query($sql)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 
     public function eliminarEstudiante($idEstudiante)
     {
@@ -249,6 +285,9 @@ class Estudiante
         }
     }
 
+    /**
+     * Esta función de PHP agrega una nueva cuenta de redes sociales para un estudiante.
+     */
     public function añadirRedSocial($nombre, $idEstudiante, $enlace)
     {
         $sql = "INSERT INTO redessociales (nombre_red,id_estudiante,enlace_red) VALUES (?,?,?)";
@@ -298,42 +337,6 @@ class Estudiante
 
 
 
-    /* Inicio sesion estudiante */
-    public function login($password, $email)
-    {
-
-        $sql = "SELECT * FROM `estudiante` WHERE `email` = '$email'";
-        $result = $this->conection->query($sql);
-        if ($result->num_rows < 1) return false;
-        $row = $result->fetch_assoc();
-
-
-        if (password_verify($password, $row['password'])) {
-            $_SESSION['estudiante'] = $row['idEstudiante'];
-            return $row;
-        } else {
-            return false;
-        }
-    }
-
-    public function close()
-    {
-        $_SESSION['estudiante'] = NULL;
-        unset($_SESSION['estudiante']);
-    }
-
-    public function cambiarContraseña($nuevaContraseña)
-    {
-        $hashContraseña = password_hash($nuevaContraseña, PASSWORD_DEFAULT);
-        $sql = "UPDATE estudiante SET password = '$hashContraseña'";
-
-        if ($this->conection->query($sql)) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
     public function comprobarEmail($email)
     {
         // Consulta a la base de datos
@@ -378,6 +381,9 @@ class Estudiante
         }
     }
 
+    /**
+     * Esta función comprueba si un estudiante está inscrito a una oferta específica.
+     */
     public function inscrito($idOferta)
     {
         $sql = "SELECT * FROM estudiante_oferta WHERE idEstudiante = ? AND idOferta = ?";

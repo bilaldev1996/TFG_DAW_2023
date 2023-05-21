@@ -1,13 +1,5 @@
-/* Página login estudiante */
+/* Página login */
 
-
-
-h2 {
-    color: #666666;
-    margin-bottom: 2rem !important;
-    text-align: center;
-    font-size: 2rem !important;
-}
 
 .login-container {
     background-color: #FFFFFF;
@@ -17,6 +9,13 @@ h2 {
     width: 40%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+}
+
+h2 {
+    color: #666666;
+    margin-bottom: 2rem !important;
+    text-align: center;
+    font-size: 2rem !important;
 }
 
 .login-container form,
@@ -61,7 +60,7 @@ button[type="submit"]:hover {
     margin-left: .5rem;
 }
 
-/* Página registro estudiante */
+/* Página registro */
 
 .form-container {
     background-color: #FFFFFF;
@@ -70,8 +69,6 @@ button[type="submit"]:hover {
     padding: 20px;
     width: 60%;
 }
-
-/* Página ofertas */
 
 
 @media screen and (max-width:992px) {

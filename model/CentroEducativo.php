@@ -197,6 +197,7 @@ class CentroEducativo
     }
 
 
+    /* Devolver todos los estudiantes que pertenecen a un centro */
     public function getEstudiantesPorCentro()
     {
         $sql = "SELECT e.*, t.*, cf.nombreCiclo AS nombreCiclo
@@ -219,6 +220,7 @@ class CentroEducativo
         return $estudiantes;
     }
 
+    /* Validar titulación de un estudiante */
     public function validarTitulacion($idEstudiante, $idCiclo)
     {
         $fecha_actual = date('Y-m-d');

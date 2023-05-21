@@ -249,6 +249,7 @@ class EstudianteController
         return $this->panelEstudiante();
     }
 
+    /* Actualizar curriculum de un estudiante */
     public function cambiarCurriculum()
     {
         /* Guardar curriculum en el servidor */
@@ -295,6 +296,7 @@ class EstudianteController
         exit();
     }
 
+    /* Eliminar cuenta de un estudiante */
     public function darseBajaEstudiante()
     {
 
@@ -315,6 +317,7 @@ class EstudianteController
         $this->estudiante->darseBajaEstudiante($_SESSION['estudiante']);
     }
 
+    /* Ver ofertas a las que se ha postulado en estudiante */
     public function misOfertas()
     {
         if (isset($_SESSION['estudiante'])) {
@@ -329,6 +332,7 @@ class EstudianteController
         return $this->accesoEstudiante();
     }
 
+    /* Eliminar candidatura y actualizar número de inscritos */
     public function eliminarCandidatura()
     {
         $idOferta = $_GET['idOferta'];
@@ -342,12 +346,12 @@ class EstudianteController
         return $this->misOfertas();
     }
 
+    /* Añadir nueva titulación si no la tiene ya asignada */
     public function añadirTitulacion()
     {
 
         if (!isset($_POST['anioCurso'])) {
 
-            // marcar completa un curso que se esta cursando
             $titulacionesExistentes = $this->estudiante->getTitulacionesExistentes();
             if (in_array($_GET['idCiclo'], $titulacionesExistentes)) {
                 //echo 'titulacion-existente';
@@ -377,6 +381,7 @@ class EstudianteController
         return $this->panelEstudiante();
     }
 
+    /* Añadir curso actual que está cursando */
     public function añadirCurso()
     {
         $idCiclo = $_POST['ciclo'];

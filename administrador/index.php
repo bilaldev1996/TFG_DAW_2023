@@ -1,7 +1,4 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
 
 session_start();
 
@@ -32,7 +29,6 @@ $controlador = new $controllerName();
 $dataToView = array();
 $dataToView  = $controlador->{$_GET["action"]}();
 
-// Leer vistas
 require_once 'view/template/header.php';
 require_once 'view/' . $controlador->view . '.php';
 require_once 'view/template/footer.php';

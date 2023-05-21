@@ -23,6 +23,12 @@ class Db
         }
     }
 
+    /**
+     * Este es un método estático que devuelve una instancia de la clase si aún no existe.
+     * 
+     * @return una instancia de la clase.
+     * Uso este método estático para que no se realicen demasidas peticiones a la base de datos y caiga la web.
+     */
     public static function getInstance()
     {
         if (!isset(self::$instance)) {

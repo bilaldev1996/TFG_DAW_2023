@@ -5,6 +5,7 @@ $db = 'dbs10885835';
 $user = 'dbu1360261';
 $pass = 'JobsNow2023';
 
+/* Devuelve los estudiantes, titulacion y el nombre de un ciclo formativo de un centro concreto y que coincida con la titulacion */
 if (isset($_GET['titulacion'])) {
     $titulacion = $_GET['titulacion'];
 

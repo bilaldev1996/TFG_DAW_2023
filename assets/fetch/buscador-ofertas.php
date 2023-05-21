@@ -6,6 +6,11 @@ $user = 'dbu1360261';
 $pass = 'JobsNow2023';
 
 
+/* Este código ejecuta una consulta para seleccionar todas las filas
+distintas de la tabla `ofertaempleo` donde la columna `titulo` contiene el valor del parámetro
+`valor_input`. Luego obtiene los resultados y los almacena en un array 'registros', que
+se codifica como una cadena JSON utilizando la función `json_encode()` y se imprime en la salida.
+Finalmente, cierra la conexión a la base de datos usando la función `mysqli_close()`. */
 if (isset($_GET['valor_input'])) {
     $valor_input = $_GET['valor_input'];
     $con = mysqli_connect($host, $user, $pass, $db, 3306);

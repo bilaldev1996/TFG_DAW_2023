@@ -76,6 +76,7 @@ class CicloFormativo
         $this->idCentro = $idCentro;
     }
 
+    /* Crear nuevo ciclo formativo */
     public function nuevoCiclo($nombreCiclo, $nivel, $familia, $idCentro)
     {
         $sql = "INSERT INTO cicloformativo (nombreCiclo,nivel,familia,idCentro) VALUES (?,?,?,?)";
@@ -88,6 +89,7 @@ class CicloFormativo
         };
     }
 
+    /* Devolver todos los ciclos que pertencen a un centro */
     public function getCiclosCentro($idCentro)
     {
         $sql = "SELECT DISTINCT * FROM cicloformativo WHERE idCentro = ? ORDER BY nivel ASC";

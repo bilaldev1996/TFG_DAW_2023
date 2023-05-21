@@ -1,4 +1,4 @@
-/* contenedorCiclos */
+/* Aqui iran los estilos de los paneles de estudiantes, empresa y centro educativo */
 .contenedorCiclos {
     display: grid;
     grid-template-columns: repeat(3, 1fr);

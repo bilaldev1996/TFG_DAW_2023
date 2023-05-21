@@ -151,6 +151,18 @@ class Oferta
         $this->setCampo($num_inscritos, 'num_inscritos', $idOferta);
     }
 
+    /**
+     * Esta función actualiza un campo específico en una tabla de base de datos para una ID de oferta
+     * determinada.
+     * 
+     * @param valor El valor que se establecerá en el campo especificado.
+     * @param campo El nombre de la columna de la tabla "ofertaempleo" que se quiere actualizar.
+     * @param idOferta Este parámetro representa el identificador único de la oferta de trabajo que
+     * debe actualizarse.
+     * 
+     * @return un valor booleano, verdadero si la consulta de actualización se ejecutó correctamente y
+     * falso si hubo un error.
+     */
     public function setCampo($valor, $campo, $idOferta)
     {
         $sql = "UPDATE ofertaempleo SET $campo = ? WHERE idOferta = ?";
@@ -199,6 +211,21 @@ class Oferta
         $stmt->execute();
     }
 
+    /**
+     * Esta función recupera una lista de estudiantes que se han postulado a una oferta de trabajo
+     * específica y se encuentran en un estado de solicitud determinado.
+     * 
+     * @param idOferta El ID de la oferta de trabajo para la que queremos recuperar el estado de los
+     * candidatos.
+     * @param estado El parámetro "estado" es una variable de cadena que representa el estado de la
+     * solicitud de un estudiante para una oferta de trabajo. Se utiliza en una consulta SQL para
+     * filtrar los alumnos que han aplicado a una determinada oferta de trabajo y tienen un determinado
+     * estado de aplicación.
+     * 
+     * @return Array de objetos Estudiante (estudiantes) que se han postulado a una oferta de
+     * trabajo con una identificación específica y un estado de solicitud específico. Si no hay
+     * resultados coincidentes, devuelve falso.
+     */
     public function estadoCandidaturaEstudiante($idOferta, $estado)
     {
         $sql = "SELECT * FROM estudiante WHERE idEstudiante IN (SELECT idEstudiante FROM estudiante_oferta WHERE idOferta = ? AND estadoCandidatura = ?)";
@@ -224,6 +251,9 @@ class Oferta
         }
     }
 
+    /**
+     * Esta función recupera una lista de estudiantes inscritos en una oferta de cursos específica.
+     */
     public function estudiantesInscritos($idOferta)
     {
         $sql = "SELECT * FROM estudiante WHERE idEstudiante IN (SELECT idEstudiante FROM estudiante_oferta WHERE idOferta = ?)";
@@ -249,6 +279,9 @@ class Oferta
         }
     }
 
+    /**
+     * Esta función recupera la fecha de envío de una ID de oferta dada
+     */
     public function getFechaEnvio($idOferta)
     {
         $sql = "SELECT fechaEnvio FROM `estudiante_oferta` WHERE idOferta = ?";
@@ -290,6 +323,9 @@ class Oferta
         }
     }
 
+    /**
+     * Esta función actualiza el estado de la solicitud de un estudiante para una oferta de trabajo.
+     */
     public function cambiarCandidaturaEstudiante($idEstudiante, $idOferta, $estado)
     {
         $sql = "UPDATE estudiante_oferta SET estadoCandidatura = ? WHERE idEstudiante = ? AND idOferta = ?";

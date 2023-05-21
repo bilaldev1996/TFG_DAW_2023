@@ -1,5 +1,4 @@
-/* Estilos para la sección hero */
-
+/* Estilos para las 3 secciones de la home page */
 .container-section {
     display: grid;
     grid-template-columns: repeat(2, 1fr);

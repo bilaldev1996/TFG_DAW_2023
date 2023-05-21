@@ -31,6 +31,9 @@ class OfertaController
         return $this->view = 'accesoEstudiante';
     }
 
+    /*
+    * Función que muestra una oferta para un estudiante
+     */
     public function verOferta()
     {
 
@@ -50,6 +53,7 @@ class OfertaController
         return $this->view = 'accesoEstudiante';
     }
 
+    /* Función para que un estudiante se pueda inscribir en una oferta concreta también actualiza el número de inscritos en una oferta  */
     public function inscribirseOferta()
     {
 

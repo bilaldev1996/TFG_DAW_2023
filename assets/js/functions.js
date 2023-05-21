@@ -651,6 +651,13 @@ async function eliminarCiclo(idCiclo) {
         location.reload();
     }
 }
+/**
+ * La función solicita al usuario que confirme la eliminación del título de un estudiante y luego envía
+ * una solicitud al servidor para eliminarlo.
+ * @param event - El objeto de evento que activó la función (por ejemplo, un evento de clic).
+ * @param idEstudiante - El ID del estudiante cuya calificación se está eliminando.
+ * @param idTitulacion - El ID de la titulación que se desea eliminar.
+ */
 function eliminarTitulacionEstudiante(
     event,
     idEstudiante,
@@ -682,6 +689,10 @@ function eliminarTitulacionEstudiante(
     });
 }
 
+/**
+ * La función comprueba si se completaron ciertos campos y habilita o deshabilita un botón en
+ * consecuencia.
+ */
 function verificarCampos() {
     const nivelSelect = document.getElementById('nivelCiclo');
     const cicloSelect = document.getElementById('cicloCentro');
@@ -701,6 +712,10 @@ function verificarCampos() {
     }
 }
 
+/**
+ * La función agrega detectores de eventos para seleccionar elementos y obtiene datos para completar un
+ * elemento de selección en función de la selección del usuario.
+ */
 function añadirCiclosSelect() {
     const nivelSelect = document.getElementById('nivelCiclo');
     const cicloSelect = document.getElementById('cicloCentro');
@@ -767,6 +782,7 @@ function añadirCiclosSelect() {
 
 añadirCiclosSelect();
 
+/* Rellenar los selects correpondientes dependiendo de la elección del usuario, realizando una consulta AJAXA que devuelve los ciclos */
 function añadirCursoActual() {
     const nivelSelect = document.getElementById('nivelSeleccionado');
     const centroSelect = document.getElementById('centro');
@@ -833,6 +849,13 @@ function añadirCursoActual() {
 añadirCursoActual();
 
 /* Seccion empresa */
+/**
+ * Esta función valida un formulario de registro para una empresa y evita el envío si los campos no son
+ * válidos.
+ *  Solo agrega un detector de eventos al formulario con id
+ * "formRegistroEmpresa" y evita su comportamiento predeterminado cuando se envía. Si la función
+ * "validarCamposRegistroEmpresa()" devuelve verdadero, entonces se envía el formulario.
+ */
 function validarFormularioRegistroEmpresa() {
     const formulario = document.getElementById('formRegistroEmpresa');
 
@@ -848,6 +871,12 @@ function validarFormularioRegistroEmpresa() {
         }
     });
 }
+/**
+ * Esta función valida los campos de entrada para registrar una empresa y devuelve verdadero si todos
+ * los campos son válidos.
+ * @returns un valor booleano, que es verdadero si todos los campos obligatorios se completaron
+ * correctamente y falso si hay algún error.
+ */
 function validarCamposRegistroEmpresa() {
     const nombre = document.getElementById('nombre');
     const direccion = document.getElementById('direccion');
@@ -957,12 +986,26 @@ function validarCamposRegistroEmpresa() {
 
 validarFormularioRegistroEmpresa();
 
+/**
+ * La función valida si una cadena dada coincide con el formato de un CIF español (código de
+ * identificación fiscal).
+ * @param cif - El parámetro "cif" es una cadena que representa un número de identificación fiscal
+ * español para empresas y organizaciones.
+ * @returns La función `validarCif` devuelve un valor booleano (`verdadero` o `falso`) dependiendo de
+ * si la entrada `cif` coincide con el patrón de expresión regular definido en la función.
+ */
 function validarCif(cif) {
     const re = /^[A-HJNP-SUW][0-9]{8}$/;
     return re.test(cif);
 }
 
 /* Seccion empresa */
+/**
+ * Esta función valida los campos de un formulario antes de enviarlo.
+ * Solo contiene un detector de eventos que evita el comportamiento de
+ * envío de formulario predeterminado y llama a otra función llamada "validarCamposOferta" para validar
+ * los campos del formulario antes de enviar el formulario.
+ */
 function validarCamposPublicarOferta() {
     const formulario = document.getElementById('formPublicarOferta');
 
@@ -978,6 +1021,12 @@ function validarCamposPublicarOferta() {
         }
     });
 }
+/**
+ * La función valida si todos los campos obligatorios en un formulario de oferta de trabajo se
+ * completaron correctamente.
+ * @returns un valor booleano, que es verdadero si todos los campos obligatorios se han completado
+ * correctamente y falso si hay algún error.
+ */
 function validarCamposOferta() {
     const titulo = document.getElementById('titulo');
     const salario = document.getElementById('salario');
@@ -1059,6 +1108,9 @@ function validarCamposOferta() {
     return !errores;
 }
 
+/**
+ * La función valida que la fecha de publicación no sea posterior a la fecha de caducidad y viceversa.
+ */
 function validarCamposFechas() {
     const fechaPublicacion = document.getElementById(
         'fechaPublicacion'
@@ -1102,6 +1154,11 @@ validarCamposFechas();
 
 validarCamposPublicarOferta();
 
+/**
+ * La función solicita al usuario que confirme la eliminación de una oferta y luego envía una solicitud
+ * para eliminarla antes de redirigir a la página de ofertas de la empresa.
+ * @param idOferta - El ID de la oferta que debe eliminarse.
+ */
 function eliminarOferta(idOferta) {
     const url =
         'index.php?controller=EmpresaController&action=eliminarOferta&idOferta=' +
@@ -1124,6 +1181,10 @@ function eliminarOferta(idOferta) {
     });
 }
 
+/**
+ * La función solicita al usuario que confirme la eliminación permanente de su cuenta y envía una
+ * solicitud al servidor para eliminar la cuenta si se confirma.
+ */
 async function eliminarCuenta() {
     const url =
         'index.php?controller=EmpresaController&action=eliminarCuenta';
@@ -1152,6 +1213,9 @@ async function eliminarCuenta() {
     }
 }
 
+/**
+ * La función obtiene y muestra una lista de estudiantes según su título y estado de verificación.
+ */
 function mostrarEstudiantes() {
     const titulacion = document.getElementById('titulacion').value;
     const resultadosBusqueda = document.getElementById(
@@ -1214,6 +1278,10 @@ function mostrarEstudiantes() {
             }
         });
 }
+/**
+ * La función selecciona todos los elementos con la clase "boxEstudiante" y alterna una clase de borde
+ * sobre ellos, y habilita un botón de validación si al menos un elemento tiene la clase de borde.
+ */
 function seleccionarTodo() {
     const boxEstudiante = document.querySelectorAll('.boxEstudiante');
     const botonValidar = document.querySelector('.validar');
@@ -1232,6 +1300,10 @@ function seleccionarTodo() {
     botonValidar.disabled = !algunoSeleccionado;
 }
 
+/**
+ * La función valida las calificaciones de los estudiantes seleccionados y envía una solicitud al
+ * servidor.
+ */
 function validar() {
     // Obtener los elementos seleccionados
     const elementosSeleccionados = document.querySelectorAll(
@@ -1278,6 +1350,9 @@ function validar() {
         });
 }
 
+/**
+ * La función obtiene y muestra una lista de estudiantes según su titulación.
+ */
 function mostrarEstudiantesPorTitulacion() {
     const titulacion = document.getElementById('titulacion').value;
     const resultadosBusqueda = document.querySelector(

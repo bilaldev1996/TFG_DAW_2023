@@ -5,6 +5,7 @@ $db = 'dbs10885835';
 $user = 'dbu1360261';
 $pass = 'JobsNow2023';
 
+/* Devolver todos los estudiantes que tienen una cierta titulación y si está verificada o no. */
 if (isset($_GET['titulacion'])) {
     $titulacion = $_GET['titulacion'];
     $verificado = $_GET['verificado'];

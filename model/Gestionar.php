@@ -245,27 +245,14 @@ class Gestionar
         return new CicloFormativo($row['idCiclo'], $row['nombreCiclo'], $row['nivel'], $row['descripcion'], $row['familia'], $row['idCentro']);
     }
 
-    /* devolver titulacion que corresponde a un ciclo */
-    public function getIdTitulacionByCiclo($idCiclo)
-    {
-        $stmt = $this->conection->prepare("SELECT idTitulacion FROM titulacion WHERE idCiclo = ?");
-        $stmt->bind_param("i", $idCiclo);
-        $stmt->execute();
-        $stmt->bind_result($idTitulacion);
-        $stmt->fetch();
-        return $idTitulacion;
-    }
-
     public function eliminarTitulacionEstudiante($idEstudiante, $idTitulacion)
     {
-        // Consulta 1: Eliminar un registro de la tabla estudiante_titulacion
         $sql1 = "DELETE FROM estudiante_titulacion WHERE idEstudiante = ? AND idTitulacion = ?";
         $stmt1 = $this->conection->prepare($sql1);
         $stmt1->bind_param("ii", $idEstudiante, $idTitulacion);
         $stmt1->execute();
         $stmt1->close();
 
-        // Consulta 2: Eliminar un registro de la tabla titulacion
         $sql2 = "DELETE FROM titulacion WHERE idTitulacion = ?";
         $stmt2 = $this->conection->prepare($sql2);
         $stmt2->bind_param("i", $idTitulacion);
@@ -286,6 +273,7 @@ class Gestionar
         return $centros;
     }
 
+    /* Validar una empresa (administrador) */
     public function verificarEmpresa($idEmpresa, $valor)
     {
         $sql = "UPDATE empresa SET verificado = ? WHERE idEmpresa = ?";
@@ -294,6 +282,7 @@ class Gestionar
         $stmt->execute();
     }
 
+    /* Devolver todos los estudiantes con un perfil público */
     public function getEstudiantesPúblicos()
     {
         $perfil = 'Público';

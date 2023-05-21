@@ -11,6 +11,9 @@ class Interfaz
     {
     }
 
+    /*
+    *Mostrar la página principal de la aplicación
+     */
     public function home()
     {
         $this->title = 'Plataforma Empleo JobsNow';

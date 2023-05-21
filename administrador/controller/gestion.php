@@ -27,7 +27,6 @@ class gestion
         }
     }
 
-
     public function logearAdmin()
     {
         $password = $_POST['password'] ?? '';
@@ -48,6 +47,7 @@ class gestion
     }
 
 
+    /* Redirigir al dashboard si cumple la condición, devolver los número de registros en un array */
     public function verPanel()
     {
         if (isset($_SESSION['admin'])) {
@@ -70,6 +70,7 @@ class gestion
     }
 
 
+    /* Enviar email para restablecer contraseña */
     public function enviarEmail()
     {
         $email = $_POST['email'];
@@ -106,6 +107,7 @@ class gestion
         $this->title = 'Restablecer Contraseña';
     }
 
+    /* Función que restablece la contraseña */
     public function cambiarContraseña()
     {
         $pass = $_POST['password'];
@@ -196,6 +198,7 @@ class gestion
         }
     }
 
+    /* Dar de alta a un centro educativo */
     public function altaCentro()
     {
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -221,6 +224,8 @@ class gestion
             return "centro-añadido";
         }
     }
+
+    /* Validar empresa y enviar email si ha sido verificada */
 
     public function verificarEmpresa()
     {

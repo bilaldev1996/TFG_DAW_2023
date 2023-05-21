@@ -1,3 +1,6 @@
+/**
+ * La función alterna la visibilidad de un campo de entrada de contraseña.
+ */
 function togglePassword() {
     let passwordInput = document.getElementById('password');
     if (passwordInput.type === 'password') {
@@ -16,6 +19,10 @@ function togglePasswordConfirm() {
     }
 }
 
+/**
+ * Esta función valida la entrada de un correo electrónico y muestra un mensaje de error si el correo
+ * electrónico es incorrecto.
+ */
 function validarEmail() {
     const form = document.getElementById('formEnvioEmail');
 
@@ -46,6 +53,9 @@ function validarEmail() {
 
 validarEmail();
 
+/**
+ * Esta función valida si dos contraseñas coinciden y muestra un mensaje de error si no lo hacen.
+ */
 function validarContraseñas() {
     let form = document.getElementById('formRestablecer');
 
@@ -75,6 +85,13 @@ function validarContraseñas() {
 
 validarContraseñas();
 
+/**
+ * La función confirma si el usuario desea eliminar un registro y envía una solicitud al servidor para
+ * eliminarlo si se confirma.
+ * @param id - El ID del registro que el usuario desea eliminar.
+ * @param accion - La acción que se realizará cuando el usuario confirme la eliminación. Se pasa como
+ * un parámetro en la URL.
+ */
 function confirmarEliminar(id, accion) {
     const url = `index.php?action=${accion}&id=${id}`;
 
@@ -96,6 +113,10 @@ function confirmarEliminar(id, accion) {
 }
 
 /* JS SECCION CENTROS */
+/**
+ * Esta función valida un formulario de registro para un centro y evita el envío si los campos no son
+ * válidos.
+ */
 function ValidarFormularioRegistroCentro() {
     const formulario = document.getElementById(
         'formularioRegistroCentro'
@@ -113,6 +134,12 @@ function ValidarFormularioRegistroCentro() {
         }
     });
 }
+/**
+ * Esta función valida los campos de entrada para dar de alta un centro y devuelve verdadero si no hay
+ * errores.
+ * @returns un valor booleano, que es verdadero si todos los campos obligatorios se completaron
+ * correctamente y falso si hay algún error.
+ */
 function validarCamposRegistroCentro() {
     const nombre = document.getElementById('nombre');
     const direccion = document.getElementById('direccion');
@@ -230,6 +257,13 @@ function validarEmail(email) {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return re.test(String(email).toLowerCase());
 }
+/**
+ * La función valida si una contraseña cumple con ciertos criterios.
+ * @param password - El parámetro de entrada para la función `validarPassword()`. Es la cadena de
+ * contraseña que necesita ser validada.
+ * @returns La función `validarPassword` devuelve un valor booleano que indica si el parámetro
+ * `password` cumple con los criterios especificados para una contraseña segura.
+ */
 
 function validarPassword(password) {
     const re = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;

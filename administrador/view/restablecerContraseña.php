@@ -29,7 +29,7 @@
         </div>
 
         <div class="mt-5">
-            <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-500 focus:outline-none focus:bg-blue-500">Restablecer contraseña</button>
+            <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-500">Restablecer contraseña</button>
         </div>
     </form>
 </main>

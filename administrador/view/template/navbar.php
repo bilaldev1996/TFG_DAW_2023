@@ -31,6 +31,9 @@
 </nav>
 
 <?php
+/* Este código verifica si el usuario ha iniciado sesión como administrador. Si el usuario no ha
+iniciado sesión o no es administrador, lo redirigirá a la página de inicio de sesión de la sección
+de administración del sitio web. */
 if (!isset($_SESSION['admin']) || $_SESSION['admin'] === false) {
     header('Location: /tfg_daw/administrador');
     exit();

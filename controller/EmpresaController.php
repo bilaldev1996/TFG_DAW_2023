@@ -184,6 +184,7 @@ class EmpresaController
         return 'contraseña cambiada';
     }
 
+    /* Cambiar logo de la empresa */
     public function cambiarImagen()
     {
 
@@ -248,6 +249,7 @@ class EmpresaController
         return $this->panelEmpresa();
     }
 
+
     public function publicarOferta()
     {
         if (isset($_SESSION['empresa'])) {
@@ -260,6 +262,7 @@ class EmpresaController
     }
 
 
+    /* Publicar oferta de empleo */
     public function publicarOfertaEmpleo()
     {
 
@@ -285,6 +288,7 @@ class EmpresaController
         }
     }
 
+    /* Mostrar todas las ofertas que tenga una empresa */
     public function ofertasEmpresa()
     {
         if (isset($_SESSION['empresa'])) {
@@ -299,6 +303,7 @@ class EmpresaController
         return $this->accesoEmpresa();
     }
 
+    /* Ver una oferta concreta de una empresa */
     public function verOferta()
     {
         if (isset($_SESSION['empresa'])) {
@@ -313,6 +318,7 @@ class EmpresaController
         return $this->accesoEmpresa();
     }
 
+    /* Editar una oferta de una empresa */
     public function editarOferta()
     {
         if (isset($_SESSION['empresa'])) {
@@ -347,6 +353,12 @@ class EmpresaController
         $this->oferta->eliminarOferta($_GET['idOferta']);
     }
 
+    /*  */
+    /**
+     * Esta función devuelve información sobre los estudiantes que se han postulado a una oferta de
+     * trabajo, incluido su estado y la fecha en que se envió la solicitud.
+     * Devuelve todos los estudiantes en sus diferentes estados.
+     */
     public function estudiantesInscritos()
     {
         if (isset($_SESSION['empresa'])) {
@@ -397,6 +409,7 @@ class EmpresaController
         $this->empresa->eliminarCuenta($_SESSION['empresa']);
     }
 
+    /* mostrar todos los estudiantes que tengan un perfil público */
     public function verEstudiantes()
     {
         if (isset($_SESSION['empresa'])) {

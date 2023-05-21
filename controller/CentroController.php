@@ -164,6 +164,7 @@ class CentroController
         }
     }
 
+
     public function validarTitulaciones()
     {
         if (isset($_SESSION['centro'])) {
@@ -177,6 +178,7 @@ class CentroController
         return $this->accesoCentro();
     }
 
+    /* Validar una titulación de un estudiante */
     public function validarTitulacion()
     {
 
@@ -192,8 +194,11 @@ class CentroController
         return $this->validarTitulaciones();
     }
 
+    /* Validar la titulación de varios estudiantes a la vez */
     public function validarTitulacionesEstudiantes()
     {
+        /* Recuperar los datos del cuerpo de la solicitud HTTP sin procesar y decodificarlos del
+        formato JSON en una matriz asociativa de PHP. Los datos se envían a través de JS mediante fetch por el método POST. */
         $requestBody = file_get_contents('php://input');
         $data = json_decode($requestBody, true);
 
@@ -212,6 +217,7 @@ class CentroController
         return $this->validarTitulaciones();
     }
 
+    /* Eliminar la titulación de un estudiante que no le corresponde */
     public function eliminarTitulacionEstudiante()
     {
 
@@ -225,6 +231,8 @@ class CentroController
 
 
 
+
+    /* Actualiza los datos del perfil de un centro */
     public function actualizarPerfil()
     {
         $this->centro->setNombre($_POST["nombre"]);
@@ -252,6 +260,7 @@ class CentroController
         $this->title = 'Añadir Ciclos';
     }
 
+    /* Esta función crea un nuevo ciclo formativo */
     public function añadirCiclo()
     {
 
@@ -260,6 +269,7 @@ class CentroController
         return 'ciclo-añadido';
     }
 
+    /* Devolver en una vista los ciclos que corresponden a un centro educativo */
     public function misCiclos()
     {
         if (isset($_SESSION['centro'])) {
@@ -273,6 +283,7 @@ class CentroController
         return $this->accesoCentro();
     }
 
+    /* Función para editar un ciclo formativo */
     public function editarCiclo()
     {
         if ($_POST['idCiclo']) {
@@ -282,6 +293,7 @@ class CentroController
         return $this->misCiclos();
     }
 
+    /* Función para eliminar un ciclo formativo */
     public function eliminarCiclo()
     {
 

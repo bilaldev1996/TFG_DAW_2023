@@ -21,10 +21,10 @@ $numero_ofertas = $dataToView[3];
 ?>
 
 
-<!-- Js para mostrar el grafico -->
+<!-- Librería JS para mostrar el grafico de los registros -->
 <script>
-    var ctx = document.getElementById('myChart').getContext('2d');
-    var myChart = new Chart(ctx, {
+    const ctx = document.getElementById('myChart').getContext('2d');
+    const myChart = new Chart(ctx, {
         type: 'bar',
         data: {
             labels: ['Centros', 'Empresas', 'Estudiantes', 'Ofertas de trabajo'],
