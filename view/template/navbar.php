@@ -1,5 +1,5 @@
 <header class="lg:fixed lg:w-full z-10">
-    <div class="header-movil m-5 flex justify-between items-center mb-0 lg:m-0">
+    <div class="header-movil p-5 flex justify-between items-center mb-0 lg:p-0">
         <a href="index.php" class="flex items-center lg:hidden mt-2">
             <img src="assets/images/logo.png" class="h-10" alt="logo">
             <span class="ml-2 text-xl font-semibold text-secundario">JobsNow</span>
